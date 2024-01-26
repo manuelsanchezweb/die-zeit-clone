@@ -1,107 +1,523 @@
 @import '@fontsource/fira-mono';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-mono: 'Fira Mono', monospace;
-	--color-bg-0: rgb(202, 216, 228);
-	--color-bg-1: hsl(209, 36%, 86%);
-	--color-bg-2: hsl(224, 44%, 95%);
-	--color-theme-1: #ff3e00;
-	--color-theme-2: #4075a6;
-	--color-text: rgba(0, 0, 0, 0.7);
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
-	font-family: var(--font-body);
-	color: var(--color-text);
+	color-scheme: light dark;
+	--z-color-scheme: light;
+	--z-background-primary: #fff;
+	--z-background-primary--rgb: 255, 255, 255;
+	--z-background-95: #f9f9f9;
+	--z-background-95--rgb: 249, 249, 249;
+	--z-background-90: #eeeef0;
+	--z-background-90--rgb: 238, 238, 240;
+	--z-background-module: #f0eeec;
+	--z-background-85: #dfdfe1;
+	--z-background-35: #535560;
+	--z-background-30: #44444c;
+	--z-background-20: #33333c;
+	--z-background-15: #252525;
+	--z-background-15--rgb: 37, 37, 37;
+	--z-background-body: #41464d;
+	--z-background-body--rgb: 65, 70, 77;
+	--z-background-footer: #252525;
+	--z-background-ad: #fafaf3;
+	--z-background-zplus: #b91109;
+	--z-background-register: #69696c;
+	--z-background-copy-pill: #3db263;
+	--z-color-primary: #252525;
+	--z-color-primary--rgb: 37, 37, 37;
+	--z-color-20: #33333c;
+	--z-color-30: #44444c;
+	--z-color-35: #535560;
+	--z-color-45: #69696c;
+	--z-color-45--rgb: 105, 105, 108;
+	--z-color-60--beyond: #99999c;
+	--z-color-60: #99999c;
+	--z-color-70: #aaaaac;
+	--z-color-80: #cccccf;
+	--z-color-90: #eeeef0;
+	--z-color-100: #fff;
+	--z-color-link: #252525;
+	--z-color-link--rgb: 37, 37, 37;
+	--z-color-link-hover: #b91109;
+	--z-color-link-hover--rgb: 185, 17, 9;
+	--z-color-body: #fff;
+	--z-color-footer: #cccccf;
+	--z-color-kicker: #b91109;
+	--z-color-title: #252525;
+	--z-color-alert: #b91109;
+	--z-color-logo: #1d1d1b;
+	--z-border-primary: #cccccf;
+	--z-border-50: #77777c;
+	--z-border-60: #99999c;
+	--z-border-90: #eeeef0;
+	--z-border-header: #cccccf;
+	--zon-background-yellow: #ffe246;
+	--zon-background-yellow--rgb: 255, 226, 70;
+	--zon-background-bookmarks: #085064;
+	--zon-background-podcast: #cce8e9;
+	--zett-color-kicker: #df3600;
+	--zett-color-logo: #f50;
+	--ob-background-pimary: #fff;
+	--ob-background-secondary: #eee;
+	--ob-color-pimary: #252525;
+	--ob-color-secondary: #444;
+	--ob-color-meta: #69696c;
+	--ob-color-accent: #b91109;
+	--z-gap: 0.875rem;
+	--z-comments-gap: 0;
+	--vh: 100vh;
+
+	/* // Deprecated  */
+	--z-ds-color-general-black-100: #000;
+	--z-ds-color-general-black-80: rgba(0, 0, 0, 0.8);
+	--z-ds-color-general-black-60: rgba(0, 0, 0, 0.6);
+	--z-ds-color-general-black-40: rgba(0, 0, 0, 0.4);
+	--z-ds-color-general-white-0: #fff;
+	--z-ds-color-general-white-20: rgba(255, 255, 255, 0.8);
+	--z-ds-color-general-white-40: rgba(255, 255, 255, 0.6);
+	--z-ds-color-background-0: #fff;
+	--z-ds-color-background-10: #eee;
+	--z-ds-color-background-10--rgb: 238, 238, 238;
+	--z-ds-color-background-20: #dfdfe1;
+	--z-ds-color-background-modal: #fff;
+	--z-ds-color-background-warning: #ffe246;
+	--z-ds-color-text-100: #252525;
+	--z-ds-color-text-70: #444;
+	--z-ds-color-text-55: #69696c;
+	--z-ds-color-text-40: #999;
+	--z-ds-color-accent-100: #b91109;
+	--z-ds-color-accent-70: #880d07;
+	--z-ds-color-error-70: #bf4040;
+	--z-ds-color-focus-100: #005fcc;
+	--z-ds-color-hey-studium-primary: #8578e6;
+	--z-ds-color-hey-studium-button-default: #c1bbec;
+	--z-ds-color-hey-studium-button-hover: #8578e6;
+	--z-ds-color-border-100: #cccccf;
+	--z-ds-color-border-70: #e4e4e4;
+	--z-ds-color-border-hover: var(--z-ds-color-text-70);
+	--z-ds-fontsize-12: 0.75rem;
+	--z-ds-fontsize-14: 0.875rem;
+	--z-ds-fontsize-16: 1rem;
+	--z-ds-fontsize-18: 1.125rem;
+	--z-ds-fontsize-20: 1.25rem;
+	--z-ds-fontsize-22: 1.375rem;
+	--z-ds-fontsize-24: 1.5rem;
+	--z-ds-fontsize-26: 1.625rem;
+	--z-ds-fontsize-30: 1.875rem;
+	--z-ds-fontsize-32: 2rem;
+	--z-ds-fontsize-34: 2.125rem;
+	--z-ds-fontsize-42: 2.625rem;
+	--z-ds-fontsize-46: 2.875rem;
+	--z-ds-lineheight-10: 1;
+	--z-ds-lineheight-11: 1.1;
+	--z-ds-lineheight-12: 1.2;
+	--z-ds-lineheight-15: 1.5;
+	--z-ds-letter-spacing-1: 0.02em;
+	--z-ds-space-4: 0.25rem;
+	--z-ds-space-6: 0.375rem;
+	--z-ds-space-8: 0.5rem;
+	--z-ds-space-10: 0.625rem;
+	--z-ds-space-12: 0.75rem;
+	--z-ds-space-14: 0.875rem;
+	--z-ds-space-16: 1rem;
+	--z-ds-space-20: 1.25rem;
+	--z-ds-space-24: 1.5rem;
+	--z-ds-space-32: 2rem;
+	--z-ds-space-42: 2.625rem;
+	--z-ds-space-54: 3.375rem;
+	--z-ds-space-xxxs: 0.25rem;
+	--z-ds-space-xxs: 0.25rem;
+	--z-ds-space-xs: 0.5rem;
+	--z-ds-space-s: 0.75rem;
+	--z-ds-space-m: 1rem;
+	--z-ds-space-l: 1.5rem;
+	--z-ds-space-xl: 2rem;
+	--z-ds-space-xxl: 2rem;
+	--z-ds-space-teaser: 1.5rem;
+	--z-ds-border-radius-2: 0.125rem;
+	--z-ds-border-radius-4: 0.25rem;
+	--z-ds-border-radius-8: 0.5rem;
+	--z-ds-boxshadow-base: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.05);
+
+	/* // 2024  */
+	--2024-energiekostenmonitor-duv-color-parteien-it-fi: #37a7e4;
+	--2024-energiekostenmonitor-duv-color-parteien-it-fdi: #5e69d5;
+	--2024-energiekostenmonitor-duv-color-parteien-it-lega: #39a48a;
+	--2024-energiekostenmonitor-duv-color-parteien-it-pd: #e31d34;
+	--2024-energiekostenmonitor-duv-color-parteien-it-m5s: #f3d43b;
+	--2024-energiekostenmonitor-duv-color-parteien-fr-ps: #e31d34;
+	--2024-energiekostenmonitor-duv-color-parteien-fr-eelv: #5ba700;
+	--2024-energiekostenmonitor-duv-color-parteien-fr-lr: #335588;
+	--2024-energiekostenmonitor-duv-color-parteien-fr-rec: #af733c;
+	--2024-energiekostenmonitor-duv-color-parteien-fr-fi: #c13197;
+	--2024-energiekostenmonitor-duv-color-parteien-fr-rn: #37a7e4;
+	--2024-energiekostenmonitor-duv-color-parteien-fr-lrem: #f3d43b;
+	--2024-energiekostenmonitor-duv-color-parteien-us-republicans: #b91109;
+	--2024-energiekostenmonitor-duv-color-parteien-us-democrats: #0088a0;
+	--2024-energiekostenmonitor-duv-color-parteien-de-andere: #9c8e77;
+	--2024-energiekostenmonitor-duv-color-parteien-de-die-partei: #f76906;
+	--2024-energiekostenmonitor-duv-color-parteien-de-afd: #37a7e4;
+	--2024-energiekostenmonitor-duv-color-parteien-de-fdp: #f3d43b;
+	--2024-energiekostenmonitor-duv-color-parteien-de-gruene: #5ba700;
+	--2024-energiekostenmonitor-duv-color-parteien-de-linke: #c13197;
+	--2024-energiekostenmonitor-duv-color-parteien-de-cdu-csu-union: #333333;
+	--2024-energiekostenmonitor-duv-color-parteien-de-spd: #e31d34;
+	--2024-energiekostenmonitor-duv-color-energie-text-wasserkraft: #6094e8;
+	--2024-energiekostenmonitor-duv-color-energie-text-windkraft: #008392;
+	--2024-energiekostenmonitor-duv-color-energie-text-solar: #897600;
+	--2024-energiekostenmonitor-duv-color-energie-text-biomasse: #849b0a;
+	--2024-energiekostenmonitor-duv-color-energie-text-erneuerbare: #00882f;
+	--2024-energiekostenmonitor-duv-color-energie-text-braunkohle: #916757;
+	--2024-energiekostenmonitor-duv-color-energie-text-steinkohle: #857e65;
+	--2024-energiekostenmonitor-duv-color-energie-text-diesel: #c356c9;
+	--2024-energiekostenmonitor-duv-color-energie-text-super-e10: #c74f96;
+	--2024-energiekostenmonitor-duv-color-energie-text-super-e5: #c9485b;
+	--2024-energiekostenmonitor-duv-color-energie-text-heizoel: #c85040;
+	--2024-energiekostenmonitor-duv-color-energie-text-lng: #8f5fde;
+	--2024-energiekostenmonitor-duv-color-energie-text-erdgas: #6f56de;
+	--2024-energiekostenmonitor-duv-color-energie-text-strom: #008671;
+	--2024-energiekostenmonitor-duv-color-energie-text-fernwaerme: #e57c3e;
+	--2024-energiekostenmonitor-duv-color-energie-text-kernenergie: #dbaf4d;
+	--2024-energiekostenmonitor-duv-color-energie-text-sonstige: #949494;
+	--2024-energiekostenmonitor-duv-color-energie-wasserkraft: #6094e8;
+	--2024-energiekostenmonitor-duv-color-energie-windkraft: #10c3d7;
+	--2024-energiekostenmonitor-duv-color-energie-solar: #d8be16;
+	--2024-energiekostenmonitor-duv-color-energie-biomasse: #849b0a;
+	--2024-energiekostenmonitor-duv-color-energie-erneuerbare: #0dbe4b;
+	--2024-energiekostenmonitor-duv-color-energie-braunkohle: #916757;
+	--2024-energiekostenmonitor-duv-color-energie-steinkohle: #857e65;
+	--2024-energiekostenmonitor-duv-color-energie-diesel: #c356c9;
+	--2024-energiekostenmonitor-duv-color-energie-super-e10: #c74f96;
+	--2024-energiekostenmonitor-duv-color-energie-super-e5: #c9485b;
+	--2024-energiekostenmonitor-duv-color-energie-heizoel: #c85040;
+	--2024-energiekostenmonitor-duv-color-energie-lng: #8f5fde;
+	--2024-energiekostenmonitor-duv-color-energie-erdgas: #6f56de;
+	--2024-energiekostenmonitor-duv-color-energie-strom: #3bc3ae;
+	--2024-energiekostenmonitor-duv-color-energie-fernwaerme: #e57c3e;
+	--2024-energiekostenmonitor-duv-color-energie-kernenergie: #dbaf4d;
+	--2024-energiekostenmonitor-duv-color-energie-sonstige: #949494;
+	--2024-energiekostenmonitor-duv-color-corona-tests: #259661;
+	--2024-energiekostenmonitor-duv-color-corona-ungeimpft: #c4a600;
+	--2024-energiekostenmonitor-duv-color-corona-impfung-4: #004040;
+	--2024-energiekostenmonitor-duv-color-corona-impfung-3: #006363;
+	--2024-energiekostenmonitor-duv-color-corona-impfung-2: #068c8b;
+	--2024-energiekostenmonitor-duv-color-corona-impfung-1: #1ab792;
+	--2024-energiekostenmonitor-duv-color-corona-impfungen: #055a5a;
+	--2024-energiekostenmonitor-duv-color-corona-tote: #252525;
+	--2024-energiekostenmonitor-duv-color-corona-intensivbetten: #5a5ec8;
+	--2024-energiekostenmonitor-duv-color-corona-hospitalisierungen: #ff8f28;
+	--2024-energiekostenmonitor-duv-color-corona-infektionen: #9e3d70;
+	--2024-energiekostenmonitor-duv-color-background-highlight: #ffeb61;
+	--2024-energiekostenmonitor-duv-size-border-radius-l: 8px;
+	--2024-energiekostenmonitor-duv-size-border-radius-m: 4px;
+	--2024-energiekostenmonitor-duv-size-border-radius-s: 2px;
+	--2024-energiekostenmonitor-duv-size-margin-l: 2.4rem;
+	--2024-energiekostenmonitor-duv-size-margin-m: 1.25rem;
+	--2024-energiekostenmonitor-duv-size-margin-s: 0.6rem;
+	--2024-energiekostenmonitor-duv-size-margin-xs: 0.3rem;
+	--2024-energiekostenmonitor-duv-size-padding-page-large: 20px;
+	--2024-energiekostenmonitor-duv-size-padding-page-small: 14px;
+	--2024-energiekostenmonitor-duv-size-width-article-without-padding: 62.5rem;
+	--2024-energiekostenmonitor-duv-size-width-article: 60rem;
+	--2024-energiekostenmonitor-duv-size-width-wide: 51.25rem;
+	--2024-energiekostenmonitor-duv-size-width-content-column: 41.25rem;
+	--2024-energiekostenmonitor-duv-size-xl: 3.75rem;
+	--2024-energiekostenmonitor-duv-size-l: 2.4rem;
+	--2024-energiekostenmonitor-duv-size-m: 1.25rem;
+	--2024-energiekostenmonitor-duv-size-s: 0.6rem;
+	--2024-energiekostenmonitor-duv-size-xs: 0.3rem;
+	--2024-energiekostenmonitor-duv-size-2xs: 0.2rem;
+	--2024-energiekostenmonitor-duv-color-geschlechter-offen: #f3d43b;
+	--2024-energiekostenmonitor-duv-color-geschlechter-keine-angabe: #aaaaaa;
+	--2024-energiekostenmonitor-duv-color-geschlechter-andere: #00cbdb;
+	--2024-energiekostenmonitor-duv-color-geschlechter-mann: #68dba8;
+	--2024-energiekostenmonitor-duv-color-geschlechter-frau: #f54a2b;
+	--2024-energiekostenmonitor-duv-color-sonnengelb-b: #f76906;
+	--2024-energiekostenmonitor-duv-color-sonnengelb-a: #ffbb00;
+	--2024-energiekostenmonitor-duv-color-rubinrot-b: #b91109;
+	--2024-energiekostenmonitor-duv-color-rubinrot-a: #f54a2b;
+	--2024-energiekostenmonitor-duv-color-beeren-a: #c11f7e;
+	--2024-energiekostenmonitor-duv-color-seegruen-b: #269661;
+	--2024-energiekostenmonitor-duv-color-seegruen-a: #1cdd7e;
+	--2024-energiekostenmonitor-duv-color-ozeanblau-b: #0088a0;
+	--2024-energiekostenmonitor-duv-color-ozeanblau-a: #01cbdb;
+	--2024-energiekostenmonitor-duv-color-bwscale-100: #ffffff;
+	--2024-energiekostenmonitor-duv-color-bwscale-95: #f9f9f9;
+	--2024-energiekostenmonitor-duv-color-bwscale-90: #eeeef0;
+	--2024-energiekostenmonitor-duv-color-bwscale-85: #dfdfe1;
+	--2024-energiekostenmonitor-duv-color-bwscale-80: #cccccf;
+	--2024-energiekostenmonitor-duv-color-bwscale-75: #bbbbbd;
+	--2024-energiekostenmonitor-duv-color-bwscale-70: #aaaaac;
+	--2024-energiekostenmonitor-duv-color-bwscale-65: #a1a1a4;
+	--2024-energiekostenmonitor-duv-color-bwscale-60: #99999c;
+	--2024-energiekostenmonitor-duv-color-bwscale-55: #89898c;
+	--2024-energiekostenmonitor-duv-color-bwscale-50: #79797c;
+	--2024-energiekostenmonitor-duv-color-bwscale-45: #69696c;
+	--2024-energiekostenmonitor-duv-color-bwscale-40: #5e5f66;
+	--2024-energiekostenmonitor-duv-color-bwscale-35: #535560;
+	--2024-energiekostenmonitor-duv-color-bwscale-30: #44444c;
+	--2024-energiekostenmonitor-duv-color-bwscale-25: #3b3b44;
+	--2024-energiekostenmonitor-duv-color-bwscale-20: #33333c;
+	--2024-energiekostenmonitor-duv-color-bwscale-15: #252525;
+	--2024-energiekostenmonitor-duv-color-bwscale-10: #121212;
+	--2024-energiekostenmonitor-duv-color-bwscale-5: #0f0e0f;
+	--2024-energiekostenmonitor-duv-color-bwscale-0: #000000;
+	--2024-energiekostenmonitor-duv-color-border-tertiary: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-90
+	);
+	--2024-energiekostenmonitor-duv-color-border-secondary: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-85
+	);
+	--2024-energiekostenmonitor-duv-color-border-primary: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-80
+	);
+	--2024-energiekostenmonitor-duv-color-energie-oel: var(
+		--2024-energiekostenmonitor-duv-color-energie-heizoel
+	);
+	--2024-energiekostenmonitor-duv-color-energie-gas: var(
+		--2024-energiekostenmonitor-duv-color-energie-erdgas
+	);
+	--2024-energiekostenmonitor-duv-color-energie-text-oel: var(
+		--2024-energiekostenmonitor-duv-color-energie-text-heizoel
+	);
+	--2024-energiekostenmonitor-duv-color-energie-text-gas: var(
+		--2024-energiekostenmonitor-duv-color-energie-text-erdgas
+	);
+	--2024-energiekostenmonitor-duv-color-background-card: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-100
+	);
+	--2024-energiekostenmonitor-duv-color-background-popup: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-100
+	);
+	--2024-energiekostenmonitor-duv-color-background-tertiary: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-90
+	);
+	--2024-energiekostenmonitor-duv-color-background-secondary: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-95
+	);
+	--2024-energiekostenmonitor-duv-color-background-primary: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-100
+	);
+	--2024-energiekostenmonitor-duv-color-headline-secondary: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-40
+	);
+	--2024-energiekostenmonitor-duv-color-headline-primary: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-30
+	);
+	--2024-energiekostenmonitor-duv-color-text-tertiary: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-65
+	);
+	--2024-energiekostenmonitor-duv-color-text-secondary: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-45
+	);
+	--2024-energiekostenmonitor-duv-color-text-primary: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-15
+	);
+	--2024-energiekostenmonitor-duv-color-shades-100: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-100
+	);
+	--2024-energiekostenmonitor-duv-color-shades-95: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-95
+	);
+	--2024-energiekostenmonitor-duv-color-shades-90: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-90
+	);
+	--2024-energiekostenmonitor-duv-color-shades-85: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-85
+	);
+	--2024-energiekostenmonitor-duv-color-shades-80: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-80
+	);
+	--2024-energiekostenmonitor-duv-color-shades-75: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-75
+	);
+	--2024-energiekostenmonitor-duv-color-shades-70: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-70
+	);
+	--2024-energiekostenmonitor-duv-color-shades-65: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-65
+	);
+	--2024-energiekostenmonitor-duv-color-shades-60: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-60
+	);
+	--2024-energiekostenmonitor-duv-color-shades-55: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-55
+	);
+	--2024-energiekostenmonitor-duv-color-shades-50: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-50
+	);
+	--2024-energiekostenmonitor-duv-color-shades-45: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-45
+	);
+	--2024-energiekostenmonitor-duv-color-shades-40: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-40
+	);
+	--2024-energiekostenmonitor-duv-color-shades-35: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-35
+	);
+	--2024-energiekostenmonitor-duv-color-shades-30: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-30
+	);
+	--2024-energiekostenmonitor-duv-color-shades-25: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-25
+	);
+	--2024-energiekostenmonitor-duv-color-shades-20: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-20
+	);
+	--2024-energiekostenmonitor-duv-color-shades-15: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-15
+	);
+	--2024-energiekostenmonitor-duv-color-shades-10: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-10
+	);
+	--2024-energiekostenmonitor-duv-color-shades-5: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-5
+	);
+	--2024-energiekostenmonitor-duv-color-shades-0: var(
+		--2024-energiekostenmonitor-duv-color-bwscale-0
+	);
+	--2024-energiekostenmonitor-duv-size-margin-paragraph: var(
+		--2024-energiekostenmonitor-duv-size-margin-s
+	);
+	--2024-energiekostenmonitor-duv-size-padding-l: var(--2024-energiekostenmonitor-duv-size-s);
+	--2024-energiekostenmonitor-duv-size-padding-m: var(--2024-energiekostenmonitor-duv-size-xs);
+	--2024-energiekostenmonitor-duv-size-padding-s: var(--2024-energiekostenmonitor-duv-size-2xs);
 }
 
-body {
-	min-height: 100vh;
-	margin: 0;
-	background-attachment: fixed;
-	background-color: var(--color-bg-1);
-	background-size: 100vw 100vh;
-	background-image: radial-gradient(
-			50% 50% at 50% 50%,
-			rgba(255, 255, 255, 0.75) 0%,
-			rgba(255, 255, 255, 0) 100%
-		),
-		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+@media screen and (width > 48em) {
+	--z-gap: 1.25rem;
+	--z-comments-gap: 0;
+	--z-ds-space-xxs: 0.375rem;
+	--z-ds-space-xxl: 3.375rem;
+	--z-ds-space-teaser: 3.375rem;
 }
 
-h1,
-h2,
-p {
-	font-weight: 400;
-}
+@media (prefers-color-scheme: dark) {
+	html:not(.color-scheme-light) {
+		--z-ds-color-background-0: #121212;
+		--z-ds-color-background-10: #232323;
+		--z-ds-color-background-10--rgb: 30, 28, 31;
+		--z-ds-color-background-20: #2e2e2e;
+		--z-ds-color-background-modal: #232323;
+		--z-ds-color-background-warning: #ffd60a;
+		--z-ds-color-border-100: #363636;
+		--z-ds-color-border-70: #2e2e2e;
+		--z-ds-color-text-100: #fff;
+		--z-ds-color-text-70: #bababa;
+		--z-ds-color-text-55: #999;
+		--z-ds-color-text-40: #8b8b8b;
+		--z-ds-color-accent-100: #eb362e;
+		--z-ds-color-accent-70: #880d07;
+		--z-ds-color-error-70: #f13638;
+		--z-ds-color-focus-100: #54a3fe;
+		--z-ds-color-hey-studium-primary: #a295ec;
+		--z-ds-color-hey-studium-button-default: #a295ec;
+		--z-ds-color-hey-studium-button-hover: #cbc1f5;
+		--z-background-primary: #121212;
+		--z-background-primary--rgb: 18, 18, 18;
+		--z-background-95: #0f0e0f;
+		--z-background-95--rgb: 15, 14, 15;
+		--z-background-90: #1e1c1f;
+		--z-background-90--rgb: 30, 28, 31;
+		--z-background-module: #1f1c1e;
+		--z-background-85: #202020;
+		--z-background-35: #343236;
+		--z-background-30: #2c2b2e;
+		--z-background-20: #252426;
+		--z-background-15: #1e1c1f;
+		--z-background-15--rgb: 30, 28, 31;
+		--z-background-body: #000;
+		--z-background-body--rgb: 0, 0, 0;
+		--z-background-footer: #121212;
+		--z-background-ad: #0f0e0a;
+		--z-background-zplus: #eb362e;
+		--z-background-register: #44444c;
+		--z-background-copy-pill: #187e43;
+		--z-color-primary: #fff;
+		--z-color-primary--rgb: 255, 255, 255;
+		--z-color-20: #d3d3d3;
+		--z-color-30: #bababa;
+		--z-color-35: #a3a3a3;
+		--z-color-45: #8b8b8b;
+		--z-color-45--rgb: 139, 139, 139;
+		--z-color-60--beyond: #606066;
+		--z-color-60: #99999c;
+		--z-color-70: #aaaaac;
+		--z-color-80: #cccccf;
+		--z-color-90: #eeeef0;
+		--z-color-100: #fff;
+		--z-color-link: #fff;
+		--z-color-link--rgb: 255, 255, 255;
+		--z-color-link-hover: #eb362e;
+		--z-color-link-hover--rgb: 235, 54, 46;
+		--z-color-body: #fff;
+		--z-color-footer: #aaaaac;
+		--z-color-kicker: #eb362e;
+		--z-color-title: #fff;
+		--z-color-alert: #eb362e;
+		--z-color-logo: #fff;
+		--z-border-primary: #303033;
+		--z-border-50: #808086;
+		--z-border-60: #606066;
+		--z-border-90: #202022;
+		--z-border-header: #303033;
+		--zon-background-yellow: #ffd60a;
+		--zon-background-yellow--rgb: 255, 214, 10;
+		--zon-background-bookmarks: #002b38;
+		--zon-background-podcast: #122a2b;
+		--zett-color-kicker: #f50;
+		--zett-color-logo: #f50;
+		--ob-background-pimary: #121212;
+		--ob-background-secondary: #232323;
+		--ob-color-pimary: #fff;
+		--ob-color-secondary: #bababa;
+		--ob-color-meta: #999;
+		--ob-color-accent: #eb362e;
 
-p {
-	line-height: 1.5;
-}
+		--z-background-modal: #19181a;
+		--z-backdrop-modal: rgba(0, 0, 0, 0.7);
+		--z-color-promoted: #3b87a1;
+		--z-color-promoted--rgb: 59, 135, 161;
+		--z-color-mid-green: #187e43;
 
-a {
-	color: var(--color-theme-1);
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-h1 {
-	font-size: 2rem;
-	text-align: center;
-}
-
-h2 {
-	font-size: 1rem;
-}
-
-pre {
-	font-size: 16px;
-	font-family: var(--font-mono);
-	background-color: rgba(255, 255, 255, 0.45);
-	border-radius: 3px;
-	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-	padding: 0.5em;
-	overflow-x: auto;
-	color: var(--color-text);
-}
-
-.text-column {
-	display: flex;
-	max-width: 48rem;
-	flex: 0.6;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
-}
-
-input,
-button {
-	font-size: inherit;
-	font-family: inherit;
-}
-
-button:focus:not(:focus-visible) {
-	outline: none;
-}
-
-@media (min-width: 720px) {
-	h1 {
-		font-size: 2.4rem;
+		/* // Optimizing for dark mode */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+		--z-color-scheme: dark;
 	}
 }
 
-.visually-hidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: auto;
+body {
+	background-color: var(--z-background-primary);
+	color: var(--z-color-primary);
+	font-family: 'TabletGothic', 'Helvetica Neue', Helvetica, Arial, FreeSans, sans-serif;
+	font-size: 1em;
+	line-height: 1.5;
 	margin: 0;
-	overflow: hidden;
 	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;
+}
+
+@media screen and (min-width: 62.5em) {
+	body {
+		background-color: var(--z-background-body);
+		color: var(--z-color-body);
+		overflow-x: hidden;
+	}
+}
+
+.page__content {
+	background-color: var(--z-background-primary);
+	box-shadow: 0 0 0.3125em rgba(var(--z-background-body--rgb), 0.5);
+	color: var(--z-color-primary);
+	margin: 0 auto;
+	max-width: 62.5rem;
+	min-width: 300px;
+	padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left);
+	position: relative;
+	width: 100%;
 }

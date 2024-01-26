@@ -1,38 +1,30 @@
-# create-svelte
+<div align="center">
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+<img src="./static/project.png" width="425" />
 
-## Creating a project
+# WIP - Clone Die Zeit Verlagsgruppe
 
-If you're seeing this, you've probably already done this step. Congrats!
+Done for educational purposes. Deploy here:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+</div>
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+<div align="center">
 
-## Developing
+![Svelte Badge](https://img.shields.io/badge/Svelte-FF3E00?logo=svelte&logoColor=fff&style=flat)
+![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+![Vercel Badge](https://img.shields.io/badge/Vercel-black?style=flat&logo=Vercel&logoColor=white)
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+</div>
 
-```bash
-npm run dev
+## Features
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- 🛠️ Rebuilt of the home page using Sveltekit
+- 🎨 Clean code using TailwindCSS (No UI Libraries)
+- 🔄 Fetching RSS from Die Zeit on a daily basis
+- 🔤 100% written in TypeScript
 
-## Building
+## To Do List
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- [ ] Create a function that will get me the RSS Feed from Die Zeit: https://newsfeed.zeit.de/index
+- [ ] Bring this data in a more readable format (JSON?) to the client.
+- [ ] Do a cron job using vercel to run this function on a daily basis (https://vercel.com/guides/how-to-setup-cron-jobs-on-vercel)
