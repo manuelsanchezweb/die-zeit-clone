@@ -36,10 +36,10 @@
 				<IconBookmark />
 			</button>
 			<div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent"></div>
-			<figcaption class="absolute bottom-4 left-4 z-10 flex flex-col gap-3 max-w-[65%] text-white">
+			<figcaption class="absolute bottom-6 left-6 z-10 flex flex-col gap-3 md:max-w-[65%] text-white">
 				<small class="font-bold">{introPost.category}</small>
-				<h2 class="[text-shadow:_2px_3px_10px_rgb(0_0_0_/_40%)] font-bold text-3xl">{introPost.title}</h2>
-				<p class="line-clamp-2">{introPost.description}</p>
+				<h2 class="[text-shadow:_2px_3px_10px_rgb(0_0_0_/_40%)] font-bold text-xl md:text-3xl">{introPost.title}</h2>
+				<p class="hidden md:block line-clamp-2">{introPost.description}</p>
 				<small>Von {introPost.creator}</small>
 			</figcaption>
 
@@ -51,9 +51,9 @@
 	{#each postsWithImageAndDescription as post, index (post.title)}
 		{#if index < 3}
 			<article class="bg-white text-black flex relative mx-custom">
-				<a target="_blank" rel="nofollow noopener" href={post.link} class="relative flex gap-2 md:gap-5 ">
+				<a target="_blank" rel="nofollow noopener" href={post.link} class="relative flex flex-col md:flex-row gap-2 md:gap-5 ">
 					<figure>
-						<img class="min-h-[185px] max-w-[300px] object-cover aspect-video" src={post.imageUrl} alt={post.title} />
+						<img class="min-h-[185px] w-full md:min-w-[300px] md:max-w-[300px] object-cover aspect-video" src={post.imageUrl} alt={post.title} />
 					</figure>
 
 					<div class="flex flex-col gap-4">
@@ -63,7 +63,7 @@
 						<small class="text-gray-500">Von {post.creator}</small>
 					</div>
 
-					<button class="absolute -bottom-3 right-0 z-10 hover:bg-bg10 focus-visible:bg-bg10 dark:hover:bg-bg10 transition-colors duration-300 p-2 rounded-md text-gray-400 dark:text-white" title="Artikel merken">
+					<button class="absolute -bottom-6 right-0 z-10 hover:bg-bg10 focus-visible:bg-bg10 dark:hover:bg-bg10 transition-colors duration-300 p-2 rounded-md text-gray-400 dark:text-white" title="Artikel merken">
 						<IconBookmark />
 					</button>
 				</a>
@@ -80,7 +80,7 @@
 						<img class="max-h-[330px] w-full object-cover" src={post.imageUrl} alt={post.title} />
 					</figure>
 
-					<div class="flex justify-between divide-x mb-2">
+					<div class="flex justify-between divide-x my-2">
 						<p class="text-balance max-w-[70%]">{post.description}</p>
 						<small class="text-gray-500 px-5">Von {post.creator}</small>
 					</div>
@@ -93,9 +93,9 @@
 		{/if}
 		{#if index >= 4}
 			<article class="bg-white text-black flex relative mx-custom">
-				<a target="_blank" rel="nofollow noopener" href={post.link} class="relative flex gap-2 md:gap-5 ">
+				<a target="_blank" rel="nofollow noopener" href={post.link} class="relative flex flex-col md:flex-row gap-2 md:gap-5 ">
 					<figure>
-						<img class="min-h-[185px] max-w-[300px] object-cover aspect-video" src={post.imageUrl} alt={post.title} />
+						<img class="min-h-[185px] w-full md:min-w-[300px] md:max-w-[300px] object-cover aspect-video" src={post.imageUrl} alt={post.title} />
 					</figure>
 
 					<div class="flex flex-col gap-4">
@@ -105,7 +105,7 @@
 						<small class="text-gray-500">Von {post.creator}</small>
 					</div>
 
-					<button class="absolute -bottom-3 right-0 z-10 hover:bg-bg10 focus-visible:bg-bg10 dark:hover:bg-bg10 transition-colors duration-300 p-2 rounded-md text-gray-400 dark:text-white" title="Artikel merken">
+					<button class="absolute -bottom-6 right-0 z-10 hover:bg-bg10 focus-visible:bg-bg10 dark:hover:bg-bg10 transition-colors duration-300 p-2 rounded-md text-gray-400 dark:text-white" title="Artikel merken">
 						<IconBookmark />
 					</button>
 				</a>

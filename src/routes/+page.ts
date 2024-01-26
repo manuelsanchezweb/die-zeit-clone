@@ -3,7 +3,8 @@ import type { ITransformedItem } from '../types.js';
 export async function load({ fetch }) {
 	const res = await fetch('/api/fetchRSS');
 	const data = await res.json();
-	const layoutIndex = Math.floor(Math.random() * 4);
+
+	const layoutIndex = new Date().getSeconds() % 2 === 0 ? 0 : 1;
 
 	return {
 		props: {
