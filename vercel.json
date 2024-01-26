@@ -1,0 +1,8 @@
+{
+	"crons": [
+		{
+			"path": "/api/fetchRSS",
+			"schedule": "0 * * * *"
+		}
+	]
+}

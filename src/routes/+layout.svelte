@@ -1,6 +1,7 @@
 <script>
 	import Header from '../lib/layout/Header.svelte';
 	import Footer from '../lib/layout/Footer.svelte';
+	import Banner from '../lib/layout/Banner.svelte';
 	import './styles.css';
 </script>
 
@@ -12,6 +13,7 @@
 			<slot />
 		</main>
 	
+		<Banner />
 		<Footer />
 	
 	</div>
@@ -28,7 +30,6 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
 		width: 100%;
 		max-width: 64rem;
 		margin: 0 auto;

@@ -1,22 +1,14 @@
-<footer>
-    <p>Dieses Projekt wurde von <a href="/">manuelsanchezweb</a> zu Bildungszwecken durchgeführt</p>
+<script>
+		import LogoZeitOnline from '$lib/components/LogoZeitOnline.svelte';
+</script>
+
+<footer class="flex flex-col items-start text-start gap-5 my-custom px-custom md:px-[3rem] md:py-[1rem]">
+	<a class="border-t border-gray-200 pt-[2rem] w-full hover:scale-105 focus-visible:scale-105 transition-transform duration-300" href="/">
+		<LogoZeitOnline />
+	</a>
+    <p class="text-gray-500">Dieses Projekt wurde von <a class="font-semibold" href="/">manuelsanchezweb</a> zu Bildungszwecken durchgeführt</p>
 </footer>
 <style>
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
 
-	footer a {
-		font-weight: bold;
-	}
 
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
 </style>

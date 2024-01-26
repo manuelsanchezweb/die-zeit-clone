@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="./static/project.png" width="425" />
+<img src="./static/project-home.png" width="425" />
 
 # WIP - Clone Die Zeit Verlagsgruppe
 
-Done for educational purposes. Deploy here:
+Done for educational purposes. Deploy [here](https://zeit-online.vercel.app/)
 
 </div>
 
