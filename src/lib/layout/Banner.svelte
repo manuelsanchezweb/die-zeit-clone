@@ -33,13 +33,13 @@
     ]
 </script>
 
-<section>
+<section aria-label="Banner zum Thema Neue Magazines" class="mt-12">
 
     <div class="flex flex-col gap-8 mx-auto items-center md:px-20">
 
         <h2 class="text-xl font-bold">Jetzt entdecken!</h2>
     
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 place-items-center">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:place-items-center px-custom">
             {#each MAGAZINES as magazine, index (magazine.id)}
             <a href={magazine.url} target="_blank" rel="nofollow noopener" class="flex hover:scale-105 focus-visible:scale-105 transition-transform">
                 <figure class="flex flex-col gap-4">

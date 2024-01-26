@@ -13,9 +13,9 @@
 			</button>
 			<!-- Logo Zeit Online  -->
 			<div class="md:ml-14">
-				<h1 class="text-5xl font-bold text-center">
+				<h1 class="font-bold text-center">
 					<a class="hover:scale-105 focus-visible:scale-105 transition-transform duration-300" href="/">
-						<LogoZeitOnline />
+						<LogoZeitOnline classExtra="w-44 h-auto md:w-full" />
 					</a>
 				</h1>
 			</div>
@@ -29,7 +29,7 @@
 				</button>
 			</div>
 		</div>
-		<div class="flex items-center justify-between py-3 border-t border-gray-200 px-4">
+		<div class="flex items-center justify-between border-t border-gray-200 px-4">
 			<nav class="nav__news flex items-center space-x-1 overflow-x-scroll max-w-full whitespace-nowrap dark:text-white px-3">
 				<span class="text-accent100">⏺ Live</span>
 				<div class="flex items-center gap-3 p-2">
