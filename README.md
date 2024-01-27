@@ -28,3 +28,5 @@ Done for educational purposes. Deploy [here](https://zeit-online.vercel.app/)
 - [x] Create a function that will get me the RSS Feed from Die Zeit: https://newsfeed.zeit.de/index
 - [x] Bring this data in a more readable format (JSON?) to the client.
 - [x] Do a cron job using vercel to run this function on a daily basis (https://vercel.com/guides/how-to-setup-cron-jobs-on-vercel)
+- [x] Add right font (TabletGothic)
+- [ ] Fetch the latest categories for the nav

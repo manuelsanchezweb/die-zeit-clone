@@ -12,7 +12,9 @@ export default {
 			colors: {
 				accent100: 'var(--z-ds-color-accent-100)',
 				bg10: 'var(--z-ds-color-background-10)',
-				text70: 'var(--z-ds-color-text-70)'
+				text70: 'var(--z-ds-color-text-70)',
+				bgBody: 'var(--z-background-body)',
+				bgPrimary: 'var(--z-background-primary)'
 			}
 		}
 	},

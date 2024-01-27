@@ -43,7 +43,7 @@
             {#each MAGAZINES as magazine, index (magazine.id)}
             <a href={magazine.url} target="_blank" rel="nofollow noopener" class="flex hover:scale-105 focus-visible:scale-105 transition-transform">
                 <figure class="flex flex-col gap-4">
-                    <img class="aspect-[3/4]" src={magazine.img} alt="cover1" />
+                    <img width="160" height="233" class="aspect-[3/4]" src={magazine.img} alt="cover1" />
                     <figcaption>{magazine.name}</figcaption>
                 </figure>
             </a>
