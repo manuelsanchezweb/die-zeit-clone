@@ -53,7 +53,7 @@
 		<div class="flex flex-col md:flex-row gap-6 mt-6">
 			{#each postsWithImageAndDescription as post, index (post.title)}
 				{#if index < 2}
-					<article class="bg-bgPrimary text-black dark:text-white flex flex-colrelative">
+					<article class="bg-bgPrimary dark:bg-transparent text-black dark:text-white flex flex-colrelative">
 						<a target="_blank" rel="nofollow noopener" href={post.link} class="relative flex flex-col gap-2 md:gap-5 ">
 							<figure>
 								<img class="max-h-[175px] w-full object-cover aspect-video" src={post.imageUrl} alt={post.title} />
