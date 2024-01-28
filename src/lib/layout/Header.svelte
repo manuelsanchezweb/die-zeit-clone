@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div class="flex items-center justify-between border-t border-gray-200 px-4">
-			<nav class="nav__news flex items-center space-x-1 overflow-x-scroll max-w-full whitespace-nowrap dark:text-white px-3">
+			<nav class="nav__news flex items-center space-x-1 overflow-x-scroll max-w-full whitespace-nowrap dark:text-white md:px-3">
 				<span class="text-accent100">⏺ Live</span>
 				<div class="flex items-center gap-3 p-2">
 					<a href="/" class="text-black font-bold cursor-pointer dark:text-text70 dark:hover:bg-bg10 dark:hover:text-white rounded-md dark:focus-visible:bg-bg10 p-2">Krieg in Israel und Gaza</a>
