@@ -4,9 +4,9 @@
 
 </script>
 
-<header class="scale-100">
+<header>
 	<div class="max-w-full mx-auto ">
-		<div class="nav__area flex justify-between items-center py-2">
+		<div class="nav__area flex justify-between items-center py-2 mx-1 md:mx-custom">
 			<!-- Menu  -->
 			<button aria-label="Menu aufmachen" class="flex items-center space-x-4 hover:bg-bg10 focus-visible:bg-bg10 dark:hover:bg-bg10 transition-colors duration-300 p-2 rounded-md">
 				<svg class="h-6 w-6 dark:text-white"  xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"  aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M1 8.25h16v1.5H1zM1 3.25h16v1.5H1zM1 13.25h16v1.5H1z" clip-rule="evenodd"></path></svg>
@@ -53,10 +53,6 @@
 	header {
 		display: flex;
 		justify-content: space-between;
-	}
-
-	.nav__area {
-		margin: var(--z-ds-space-16);
 	}
 
 	.nav__news::-webkit-scrollbar {
