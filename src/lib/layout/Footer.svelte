@@ -6,7 +6,7 @@
 	<a class="border-t border-gray-200 pt-[2rem] w-full" href="/">
 		<LogoZeitOnline classExtra="w-44 h-auto md:w-fit" />
 	</a>
-    <p class="text-gray-500">Dieses Projekt wurde von <a class="font-semibold" href="/">manuelsanchezweb</a> zu Bildungszwecken durchgeführt</p>
+    <p class="text-gray-500">Dieses Projekt wurde von <a class="font-semibold" target="_blank" rel="nofollow noopener" href="https://github.com/manuelsanchezweb/die-zeit-clone">manuelsanchezweb</a> zu Bildungszwecken durchgeführt</p>
 </footer>
 <style>
 
